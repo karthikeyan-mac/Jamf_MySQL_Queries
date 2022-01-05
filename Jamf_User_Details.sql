@@ -1,0 +1,3 @@
+select distinct computers.computer_name, package_receipts.package_name, package_receipts.detail_1, package_receipts.detail_2, package_receipts.detail_3, package_receipts.detail_4, package_receipts.detail_5
+from computers left join (package_receipts, computers as comp) on (package_receipts.computer_id=computers.computer_id) where type="user"
+and detail_2 >= 501 and package_name != "casperadmin" and package_name != "casperinstall"
